@@ -1,40 +1,17 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<script type="text/javascript" src="js/echarts.min.js" ></script>
-		<script type="text/javascript" src="js/jquery.min.js" ></script>
-		<script language="javascript" src="js/index.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/post.css">
-		<script>
-			$(function(){
-			  $.ajax({
-			  //请求方式为get
-			  type:"GET",
-			  //json文件位置
-			  url:"test.json",
-			  //返回数据格式为json
-			  dataType: "json",
-			  //请求成功完成后要执行的方法
-			  success: function(data){
-			   //使用$.each方法遍历返回的数据date,插入到id为#result中
-			   var str="<ul>";
-			   $.each(data.list,function(i,n){
-				str+="<li>"+n["item"]+"</li>";
-			   })
-			   str+="</ul>";
-			   $("#test").append(str);
-			  }
-			 });
-			});
-		   </script>
-		<title></title>
-	</head>
-	<body>
+<html lang="en">
 
-		<div class="top"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="top"></div>
     <div class="top_t"> 
-        <span class="top_t2">
+        <span class="top_t1">
             <a href="../Map/ChinaVirusMap.html">
             国内疫情
             </a>
@@ -46,18 +23,18 @@
             </a>
         </span>
 
-        <span class="top_t1">
+        <span class="top_t2">
             <a href="../Map/index.html">
             旅游推荐
             </a>
-		</span>
-		
-		<span class="top_t2">
+        </span>
+
+        <span class="top_t2">
             <a href="../Map/post.html">
             人力资源地图
             </a>
         </span>
-
+        
         <span class="top_t2">
             <a href="../Map/News/news.html">
             实时播报
@@ -71,21 +48,44 @@
         </span>
 
     </div>
-		
-		<div id="main" style="height:650px;width:1300px;margin:50px auto;border:1px solid #ccc;background: #f2f2f2;position: relative;">
-			<div id="china_map" style="width:960px;height:650px;margin:0 auto;position: absolute;top:10px;left:80px;display: block;"></div>
-			<div id="proe_map" style="width:960px;height:650px;margin:0 auto;position: absolute;top:10px;left:80px;display: none;"></div>
-			<div id="city_map" style="width:960px;height:650px;margin:0 auto;position: absolute;top:10px;left:80px;display: none;"></div>
-			<div class="retPro" style="z-index:999;position: absolute;top:50px;left:10px;display: block;">
-						<a href="javascript:void(0);" onclick="goBackChinaMap()" style="height:30px;background:#fff;line-height: 30px;border:1px solid #ccc;padding:5px 10px;margin-left:20px;border-radius:5px;cursor: pointer;color:#393939;text-decoration:none;">
-							返回全国
-						</a>
-			</div>
-			<div class="retPro" style="z-index:999;position: absolute;top:50px;left:110px;display: block;">
-						<a href="javascript:void(0);" onclick="goBackProeMap()" style="height:30px;background:#fff;line-height: 30px;border:1px solid #ccc;padding:5px 10px;margin-left:20px;border-radius:5px;cursor: pointer;color:#393939;text-decoration:none;">
-							返回本省
-						</a>
-			</div>
-		</div>
-	</body>
+    <div class="container">
+        <!--国内疫情地图 -->
+        <div class="brief">
+            <div class="brief_header">
+                <h2>国内疫情</h2>
+                <p>更新时间 - 2020-05-07 10:20:21</p>
+            </div>
+            <ul class="brief_body"></ul>
+            <div class="map">
+                <div class="map_info"></div>
+                <div class="map_tab">
+                    <span class="cur">累计确诊</span>
+                    <span>现有确诊</span>
+                </div>
+            </div>
+        </div>
+        <!-- 国内疫情趋势 -->
+        <div class="tendency">
+            <div class="map_header">国内疫情趋势</div>
+            <div class="map_info"></div>
+            <div class="map_tab">
+                <span class="cur"><i>新增确诊</i></span>
+                <span><i>累计确诊/<br>现有确诊</i></span>
+                <span><i>死亡数/<br>治愈数</i></span>
+                <span><i>病死率/<br>治愈率</i></span>
+            </div>
+        </div>
+       <!-- 境外输入确诊地区Top10 -->
+        <div class="addTop10">
+            <div class="map_header">境外输入确诊省市Top10</div>
+            <div class="map_info"></div>
+        </div>
+    </div>
+    <script src="js/flexible.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/echarts.js"></script>
+    <script src="js/ChinaVirusMap.js"></script>
+    <script src="js/china.js"></script>
+</body>
+
 </html>
