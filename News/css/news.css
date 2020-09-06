@@ -1,0 +1,212 @@
+@charset "utf-8";
+
+* {
+	word-wrap: break-word;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+.top{
+  width: 100%;
+  height: 700px;
+  background: url("6.jpg") no-repeat;
+  background-size: 100% 700px;
+}
+.top_t{
+  height: 44px;
+  background-color: white;
+}
+.top_t1{
+  text-align: center;
+  background-color: #10aeb5;
+  width: 150px;
+  margin-left: 180px;
+  height: 44px;
+  float: left;
+  font-size: 25px;
+}
+.top_t2{
+  text-align: center;
+  width: 150px;
+  margin-left: 180px;
+  height: 44px;
+  float: left;
+  font-size: 25px;
+}
+
+.head{
+	font-size: 28px;
+	margin-left: 354px;
+}
+
+body {
+	overflow-x: hidden;
+	overflow-y: auto;
+	font: 16px "微软雅黑", "Arial Narrow", HELVETICA;
+}
+
+/*布局宽度*/
+.w {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+body,
+html {
+	min-width: 1200px;
+}
+
+.bz {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+/*字体样式*/
+.tl {
+	text-align: left !important;
+}
+
+.tc {
+	text-align: center !important;
+}
+
+.tr {
+	text-align: right !important;
+}
+
+.ell {
+	overflow: hidden;
+	word-wrap: normal;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.ell_1 {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+}
+
+.ell_2 {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+.about {
+	width: 100%;
+	height: auto;
+	background: #f7f7f7;
+	padding-bottom: 124px;
+	overflow: hidden;
+	padding-top: 20px;
+}
+
+.about .w .aboutR {
+	width: 1200px;
+	min-height: 905px;
+	background-color: #fff;
+	float: right;
+}
+
+.about .w .aboutR .list {
+	width: 100%;
+	height: auto;
+}
+
+.about .w .aboutR .list .item {
+	display: block;
+	width: 100%;
+	height: 220px;
+	padding: 30px;
+	border-bottom: 1px solid #cccccc;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.about .w .aboutR .list .item .fr {
+	width: 100%;
+	height: 160px;
+	overflow: hidden;
+	padding-left: 25px;
+}
+
+.about .w .aboutR .list .item .fr .ell_1 {
+	font-size: 16px;
+	color: #333333;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.about .w .aboutR .list .item .fr .ell_2 {
+	line-height: 25px;
+	font-size: 14px;
+	color: #666666;
+}
+
+.about .w .aboutR .list .item .fr .gengduo {
+	margin-top: 30px;
+	color: #999999;
+	font-size: 14px;
+}
+
+.about .w .aboutR .list .item .fr .gengduo button {
+	width: 128px;
+	height: 26px;
+	text-align: center;
+	font-size: 14px;
+	color: #ffffff;
+	background: #cc0000;
+	border-radius: 13px;
+}
+
+.about .w .aboutR .list .item .fr .gengduo span {
+	float: right;
+	line-height: 26px;
+}
+
+.about .w .aboutR .list .item:hover {
+	background: #cc0000;
+	border: none;
+}
+
+.about .w .aboutR .list .item:hover .ell_1 {
+	color: #FFFFFF;
+}
+
+.about .w .aboutR .list .item:hover .ell_2 {
+	color: #FFFFFF;
+}
+
+.about .w .aboutR .list .item:hover .gengduo span {
+	color: #fff;
+}
+
+.about .w .aboutR .list .item:hover .gengduo button {
+	background: #FFFFFF;
+	color: #cc0000;
+}
+
+button {
+	border: none;
+}

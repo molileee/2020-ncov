@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<script type="text/javascript" src="js/echarts.min.js" ></script>
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<script language="javascript" src="js/index.js"></script>
+		<script>
+			$(function(){
+			  $.ajax({
+			  //请求方式为get
+			  type:"GET",
+			  //json文件位置
+			  url:"test.json",
+			  //返回数据格式为json
+			  dataType: "json",
+			  //请求成功完成后要执行的方法
+			  success: function(data){
+			   //使用$.each方法遍历返回的数据date,插入到id为#result中
+			   var str="<ul>";
+			   $.each(data.list,function(i,n){
+				str+="<li>"+n["item"]+"</li>";
+			   })
+			   str+="</ul>";
+			   $("#test").append(str);
+			  }
+			 });
+			});
+		   </script>
+		<title></title>
+	</head>
+	<body>
+		
+		<div id="main" style="height:650px;width:1300px;margin:50px auto;border:1px solid #ccc;background: #f2f2f2;position: relative;">
+			<div id="china_map" style="width:960px;height:650px;margin:0 auto;position: absolute;top:10px;left:80px;display: block;"></div>
+			<div id="proe_map" style="width:960px;height:650px;margin:0 auto;position: absolute;top:10px;left:80px;display: none;"></div>
+			<div id="city_map" style="width:960px;height:650px;margin:0 auto;position: absolute;top:10px;left:80px;display: none;"></div>
+			<div class="retPro" style="z-index:999;position: absolute;top:50px;left:10px;display: block;">
+						<a href="javascript:void(0);" onclick="goBackChinaMap()" style="height:30px;background:#fff;line-height: 30px;border:1px solid #ccc;padding:5px 10px;margin-left:20px;border-radius:5px;cursor: pointer;color:#393939;text-decoration:none;">
+							返回全国
+						</a>
+			</div>
+			<div class="retPro" style="z-index:999;position: absolute;top:50px;left:110px;display: block;">
+						<a href="javascript:void(0);" onclick="goBackProeMap()" style="height:30px;background:#fff;line-height: 30px;border:1px solid #ccc;padding:5px 10px;margin-left:20px;border-radius:5px;cursor: pointer;color:#393939;text-decoration:none;">
+							返回本省
+						</a>
+			</div>
+		</div>
+	</body>
+</html>
